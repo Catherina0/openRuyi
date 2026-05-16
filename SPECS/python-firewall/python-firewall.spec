@@ -18,13 +18,17 @@ Source0:        https://github.com/firewalld/firewalld/releases/download/v%{vers
 BuildArch:      noarch
 BuildSystem:    meson
 
-BuildOption(install):  -l %{srcname}
-
 BuildRequires:  meson
 BuildRequires:  python3-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
+
+Requires:       python3-dbus
+Requires:       python3-gobject
+
+Provides:       python3-%{srcname} = %{version}-%{release}
+%python_provide python3-%{srcname}
 
 %description
 This package contains the Python libraries used by firewalld, including
@@ -34,7 +38,8 @@ the firewall Python module for interacting with firewalld.
 
 %files
 %doc README.md
-%license %license COPYING
+%license COPYING
+%{python3_sitelib}/firewall/
 
 %changelog
 %autochangelog
