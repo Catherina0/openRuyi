@@ -26,14 +26,11 @@ BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
 
-%install -a
-
-Provides:       python3-%{srcname} = %{version}-%{release}
-%python_provide python3-%{srcname}
-
 %description
 This package contains the Python libraries used by firewalld, including
 the firewall Python module for interacting with firewalld.
+
+%install -a
 
 %files
 %doc README.md
