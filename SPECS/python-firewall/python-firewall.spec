@@ -16,12 +16,17 @@ VCS:            git:https://github.com/firewalld/firewalld.git
 #!RemoteAsset:  sha256:453230c49b961853144dd7614d59e82fafbcc52c314c39ec66d1316274a33001
 Source0:        https://github.com/firewalld/firewalld/releases/download/v%{version}/firewalld-%{version}.tar.bz2
 BuildArch:      noarch
-BuildSystem:    pyproject
+BuildSystem:    meson
 
 BuildOption(install):  -l %{srcname}
 
-BuildRequires:  pyproject-rpm-macros
-BuildRequires:  pkgconfig(python3)
+BuildRequires:  meson
+BuildRequires:  python3-devel
+BuildRequires:  gettext
+BuildRequires:  intltool
+BuildRequires:  desktop-file-utils
+
+%install -a
 
 Provides:       python3-%{srcname} = %{version}-%{release}
 %python_provide python3-%{srcname}
@@ -30,9 +35,9 @@ Provides:       python3-%{srcname} = %{version}-%{release}
 This package contains the Python libraries used by firewalld, including
 the firewall Python module for interacting with firewalld.
 
-%files -f %{pyproject_files}
+%files
 %doc README.md
-%license LICENSE
+%license %license COPYING
 
 %changelog
 %autochangelog
