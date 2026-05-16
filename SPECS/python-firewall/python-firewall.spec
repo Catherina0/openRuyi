@@ -30,9 +30,6 @@ Provides:       python3-%{srcname} = %{version}-%{release}
 This package contains the Python libraries used by firewalld, including
 the firewall Python module for interacting with firewalld.
 
-%generate_buildrequires
-%pyproject_buildrequires
-
 %files -f %{pyproject_files}
 %doc README.md
 %license LICENSE
