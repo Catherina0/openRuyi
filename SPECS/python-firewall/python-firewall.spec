@@ -18,6 +18,8 @@ Source0:        https://github.com/firewalld/firewalld/releases/download/v%{vers
 BuildArch:      noarch
 BuildSystem:    autotools
 
+BuildRequires:  docbook-xsl
+BuildRequires:  libxslt
 BuildRequires:  python3-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
