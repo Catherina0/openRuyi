@@ -16,7 +16,7 @@ VCS:            git:https://github.com/firewalld/firewalld.git
 #!RemoteAsset:  sha256:453230c49b961853144dd7614d59e82fafbcc52c314c39ec66d1316274a33001
 Source0:        https://github.com/firewalld/firewalld/releases/download/v%{version}/firewalld-%{version}.tar.bz2
 BuildArch:      noarch
-BuildSystem:    meson
+BuildSystem:    autotools
 
 BuildRequires:  meson
 BuildRequires:  python3-devel
