@@ -18,11 +18,11 @@ Source0:        https://github.com/firewalld/firewalld/releases/download/v%{vers
 BuildArch:      noarch
 BuildSystem:    autotools
 
-BuildRequires:  meson
 BuildRequires:  python3-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
+BuildRequires:  pkgconfig(glib-2.0)
 
 Requires:       python3-dbus
 Requires:       python3-gobject
