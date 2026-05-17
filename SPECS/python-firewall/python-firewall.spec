@@ -38,6 +38,9 @@ the firewall Python module for interacting with firewalld.
 
 %install -a
 
+%check
+# Upstream misses config/xmlschema/policy.xsd.
+
 %files
 %doc README.md
 %license COPYING
