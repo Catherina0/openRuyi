@@ -33,8 +33,6 @@ your TensorFlow runs and graphs.
 %prep
 %autosetup -n %{srcname}-%{version}
 
-# The upstream pip-package helper creates a virtualenv and tries to upgrade
-# build tools from PyPI. Use RPM-provided Python build tools instead.
 perl -pi \
   -e 's/virtualenv -q -p python3 venv/virtualenv -q --system-site-packages -p python3 venv/;' \
   -e 's/^[ \t]*pip\s+install\s+.*/  python -c "import setuptools, wheel"/;' \
