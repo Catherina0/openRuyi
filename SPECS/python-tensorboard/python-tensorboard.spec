@@ -12,13 +12,16 @@ Release:        %autorelease
 Summary:        TensorBoard lets you watch Tensors Flow
 License:        Apache-2.0
 URL:            https://github.com/tensorflow/tensorboard
-# PyPI does not publish an sdist for 2.20.0, so use the upstream wheel.
-#!RemoteAsset:  sha256:9dc9f978cb84c0723acf9a345d96c184f0293d18f166bb8d59ee098e6cfaaba6
-Source0:        https://files.pythonhosted.org/packages/9c/d9/a5db55f88f258ac669a92858b70a714bbbd5acd993820b41ec4a96a4d77f/%{srcname}-%{version}-py3-none-any.whl
+#!RemoteAsset:  sha256:7a3b3bb111a9734fd051bd34e763ae90b0a76a2549e74ec75ebcba752ba5a21a
+Source0:        https://github.com/tensorflow/tensorboard/archive/refs/tags/%{version}.tar.gz#/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 
+BuildRequires:  bazel
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  python3dist(pip)
+BuildRequires:  python3dist(setuptools)
+BuildRequires:  python3dist(virtualenv)
+BuildRequires:  python3dist(wheel)
 
 Provides:       python3-%{srcname} = %{version}-%{release}
 %python_provide python3-%{srcname}
@@ -28,10 +31,19 @@ TensorBoard is a suite of web applications for inspecting and understanding
 your TensorFlow runs and graphs.
 
 %prep
+%autosetup -n %{srcname}-%{version}
+
+# The upstream pip-package helper creates a virtualenv and tries to upgrade
+# build tools from PyPI. Use RPM-provided Python build tools instead.
+perl -pi \
+  -e 's/virtualenv -q -p python3 venv/virtualenv -q --system-site-packages -p python3 venv/;' \
+  -e 's/^[ \t]*pip\s+install\s+.*/  python -c "import setuptools, wheel"/;' \
+  tensorboard/pip_package/build_pip_package.sh
 
 %build
 mkdir -p dist
-cp %{SOURCE0} dist/
+bazel build //tensorboard/pip_package:pip_package
+tar -xzf bazel-bin/tensorboard/pip_package/pip_packages.tar.gz -C dist
 
 %install
 %py3_install_wheel %{srcname}-%{version}-py3-none-any.whl
