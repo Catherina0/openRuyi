@@ -3,6 +3,7 @@
 # SPDX-FileContributor: Xuhai Chang <xuhai.oerv@isrc.iscas.ac.cn>
 # SPDX-FileContributor: Zheng Junjie <zhengjunjie@iscas.ac.cn>
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -78,6 +79,13 @@ Development files for %{name}.
 
 %files -n python-%{name}
 %{python3_sitearch}/gi/overrides/
+
+%check
+%ifarch riscv64
+%meson_test --no-suite ci_valgrind
+%else
+%meson_test
+%endif
 
 %changelog
 %autochangelog
