@@ -110,7 +110,9 @@ find build -name 'sip*.cpp' -exec sed -i \
     -e 's/operator<((\*sipCpp), a0)/((*sipCpp) < a0)/g' \
     {} +
 
-# sip 6.15.2 does not fix the module-level operator in sipQtCorecmodule.cpp
+# sip 6.15.2 does not fix these QLocale operator cases
+sed -i 's/operator!=((\*sipCpp), static_cast< ::QLocale::Language>(a0))/(sipCpp->language() != static_cast< ::QLocale::Language>(a0))/g' \
+    build/QtCore/sipQtCoreQLocale.cpp
 sed -i 's/sipRes = operator!=(sipCpp, \*a0);/sipRes = (sipCpp != a0->language());/' \
     build/QtCore/sipQtCorecmodule.cpp
 
