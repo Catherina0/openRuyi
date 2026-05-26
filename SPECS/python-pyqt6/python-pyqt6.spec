@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: yyjeqhc <jialin.oerv@isrc.iscas.ac.cn>
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -93,6 +94,25 @@ sip-build \
   --qmake-setting 'QMAKE_CFLAGS_RELEASE="%{build_cflags}"' \
   --qmake-setting 'QMAKE_CXXFLAGS_RELEASE="%{build_cxxflags} `pkg-config --cflags dbus-python` -DQT_NO_INT128"' \
   --qmake-setting 'QMAKE_LFLAGS_RELEASE="%{build_ldflags}"'
+
+find build -name 'sip*.cpp' -exec sed -i \
+    -e 's/operator==((\*sipCpp), \*a0)/((*sipCpp) == (*a0))/g' \
+    -e 's/operator!=((\*sipCpp), \*a0)/((*sipCpp) != (*a0))/g' \
+    -e 's/operator>=((\*sipCpp), \*a0)/((*sipCpp) >= (*a0))/g' \
+    -e 's/operator<=((\*sipCpp), \*a0)/((*sipCpp) <= (*a0))/g' \
+    -e 's/operator>((\*sipCpp), \*a0)/((*sipCpp) > (*a0))/g' \
+    -e 's/operator<((\*sipCpp), \*a0)/((*sipCpp) < (*a0))/g' \
+    -e 's/operator==((\*sipCpp), a0)/((*sipCpp) == a0)/g' \
+    -e 's/operator!=((\*sipCpp), a0)/((*sipCpp) != a0)/g' \
+    -e 's/operator>=((\*sipCpp), a0)/((*sipCpp) >= a0)/g' \
+    -e 's/operator<=((\*sipCpp), a0)/((*sipCpp) <= a0)/g' \
+    -e 's/operator>((\*sipCpp), a0)/((*sipCpp) > a0)/g' \
+    -e 's/operator<((\*sipCpp), a0)/((*sipCpp) < a0)/g' \
+    {} +
+
+# sip 6.15.2 does not fix the module-level operator in sipQtCorecmodule.cpp
+sed -i 's/sipRes = operator!=(sipCpp, \*a0);/sipRes = (sipCpp != a0->language());/' \
+    build/QtCore/sipQtCorecmodule.cpp
 
 %install -a
 # Explicitly byte compile as the automagic byte compilation doesn't work for
