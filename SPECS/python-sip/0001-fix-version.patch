@@ -7,7 +7,7 @@ index 8234f01..6a4c47a 100644
  license = "BSD-2-Clause"
  license-files = ["LICENSE"]
 -dynamic = ["version"]
-+version = "6.15.1"
++version = "6.15.2"
  
  [[project.authors]]
  name = "Phil Thompson"
