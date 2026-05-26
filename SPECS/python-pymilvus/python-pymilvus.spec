@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: purofle <yuguo.or@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname pymilvus
 
 Name:           python-%{srcname}
-Version:        2.6.9
+Version:        2.6.14
 Release:        %autorelease
 Summary:        Python Sdk for Milvus
 License:        Apache-2.0
 URL:            https://github.com/milvus-io/pymilvus
-#!RemoteAsset:  sha256:c53a3d84ff15814e251be13edda70a98a1c8a6090d7597a908387cbb94a9504a
+#!RemoteAsset:  sha256:078fb16731569b2fd8b82436e295f70ee2a682c8892ed0e9c919c9cbc9d0dfbd
 Source0:        https://files.pythonhosted.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
@@ -34,6 +35,9 @@ Provides:       python3-%{srcname} = %{version}-%{release}
 
 %description
 Python SDK for Milvus.
+
+%prep -a
+sed -i '/version.*attr.*_version_helper/d' pyproject.toml
 
 %generate_buildrequires
 %pyproject_buildrequires
