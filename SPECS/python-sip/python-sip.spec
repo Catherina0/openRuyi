@@ -1,19 +1,20 @@
 # SPDX-FileCopyrightText: (C) 2025 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: yyjeqhc <jialin.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname sip
 
 Name:           python-%{srcname}
-Version:        6.15.1
+Version:        6.15.2
 Release:        %autorelease
 Summary:        A Python bindings generator for C/C++ libraries
 License:        BSD-2-Clause
 URL:            https://www.riverbankcomputing.com/software/sip/
 VCS:            git:https://github.com/Python-SIP/sip
-#!RemoteAsset:  sha256:dc2e58c1798a74e1b31c28e837339822fe8fa55288ae30e8986eb28100ebca5a
+#!RemoteAsset:  sha256:01f8946062e94622f2de5954b9aa44ca27795ac1577a940a121ddd4d1da02568
 Source0:        https://files.pythonhosted.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildSystem:    pyproject
 
