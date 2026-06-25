@@ -1,20 +1,21 @@
 # SPDX-FileCopyrightText: (C) 2025 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname Beaker
 
 Name:           python-beaker
-Version:        1.13.0
+Version:        1.14.1
 Release:        %autorelease
 Summary:        WSGI middleware layer to provide sessions
 License:        BSD-3-Clause
 URL:            https://github.com/bbangert/beaker
 # No tests available on pypi
-#!RemoteAsset:  sha256:e956cd8a35ad5de1b5212c7bff8fc01e2b3d34ab92466d24684c666abb8c9c30
-Source0:        https://files.pythonhosted.org/packages/source/b/%{srcname}/%{srcname}-%{version}.tar.gz
+#!RemoteAsset:  sha256:886f52a51810703fdbc0a3e54fca40886288ff530b2070582edce72bf1945447
+Source0:        https://files.pythonhosted.org/packages/source/b/beaker/beaker-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
 
@@ -47,9 +48,9 @@ manage Session objects and signed cookies.
 
 %check -p
 # needs mongo and redis running
-rm -r tests/test_managers
-rm tests/test_memcached.py
-rm tests/test_cachemanager.py
+rm -rf tests/test_managers
+rm -f tests/test_memcached.py
+rm -f tests/test_cachemanager.py
 rm -fv tests/test.db
 
 %files -f %{pyproject_files}
