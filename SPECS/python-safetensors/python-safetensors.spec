@@ -8,12 +8,12 @@
 %global srcname safetensors
 
 Name:           python-%{srcname}
-Version:        0.7.0
+Version:        0.8.0
 Release:        %autorelease
 Summary:        Simple, safe way to store and distribute tensors
 License:        Apache-2.0
 URL:            https://github.com/huggingface/safetensors
-#!RemoteAsset:  sha256:07663963b67e8bd9f0b8ad15bb9163606cd27cc5a1b96235a50d8369803b96b0
+#!RemoteAsset:  sha256:fabaf3e0f18a6618d9b36560682562157f77c2b71fcffc7b432be2baed9d753d
 Source0:        https://files.pythonhosted.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildSystem:    pyproject
 
@@ -36,27 +36,18 @@ BuildRequires:  rust
 BuildRequires:  rust-rpm-macros
 BuildRequires:  crate(hashbrown-0.16/default) >= 0.16
 BuildRequires:  crate(hashbrown-0.16/serde) >= 0.16
+BuildRequires:  crate(libc-0.2/default) >= 0.2
 BuildRequires:  crate(memmap2-0.9/default) >= 0.9
-BuildRequires:  crate(pyo3-0.25/abi3) >= 0.25.1
-BuildRequires:  crate(pyo3-0.25/abi3-py38) >= 0.25.1
-BuildRequires:  crate(pyo3-0.25/default) >= 0.25.1
-BuildRequires:  crate(pyo3-0.25/extension-module) >= 0.25.1
-BuildRequires:  crate(pyo3-build-config-0.25/abi3) >= 0.25.1
-BuildRequires:  crate(pyo3-build-config-0.25/abi3-py38) >= 0.25.1
-BuildRequires:  crate(pyo3-build-config-0.25/default) >= 0.25.1
-BuildRequires:  crate(pyo3-build-config-0.25/extension-module) >= 0.25.1
-BuildRequires:  crate(pyo3-build-config-0.25/resolve-config) >= 0.25.1
-BuildRequires:  crate(pyo3-ffi-0.25/abi3) >= 0.25.1
-BuildRequires:  crate(pyo3-ffi-0.25/abi3-py38) >= 0.25.1
-BuildRequires:  crate(pyo3-ffi-0.25/default) >= 0.25.1
-BuildRequires:  crate(pyo3-ffi-0.25/extension-module) >= 0.25.1
-BuildRequires:  crate(pyo3-macros-0.25/default) >= 0.25.1
-BuildRequires:  crate(pyo3-macros-backend-0.25/default) >= 0.25.1
+BuildRequires:  crate(pyo3-0.28/abi3) >= 0.28.3
+BuildRequires:  crate(pyo3-0.28/abi3-py310) >= 0.28.3
+BuildRequires:  crate(pyo3-0.28/default) >= 0.28.3
+BuildRequires:  crate(pyo3-0.28/extension-module) >= 0.28.3
 BuildRequires:  crate(rustversion-1/default) >= 1.0.22
 BuildRequires:  crate(serde-1/alloc) >= 1.0
 BuildRequires:  crate(serde-1/derive) >= 1.0
 BuildRequires:  crate(serde-json-1/alloc) >= 1.0
 BuildRequires:  crate(serde-json-1/default) >= 1.0
+BuildRequires:  crate(tempfile-3/default) >= 3.27.0
 
 Provides:       python3-%{srcname} = %{version}-%{release}
 Provides:       python3-%{srcname}%{?_isa} = %{version}-%{release}
