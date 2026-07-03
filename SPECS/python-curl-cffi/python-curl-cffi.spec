@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Xuhai Chang <xuhai.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname curl_cffi
 
 Name:           python-curl-cffi
-Version:        0.14.0
+Version:        0.15.0
 Release:        %autorelease
 Summary:        Python binding for curl-impersonate fork via cffi
 License:        MIT
 URL:            https://github.com/lexiforest/curl_cffi
-#!RemoteAsset:  sha256:5ffbc82e59f05008ec08ea432f0e535418823cda44178ee518906a54f27a5f0f
+#!RemoteAsset:  sha256:ea0c67652bf6893d34ee0f82c944f37e488f6147e9421bef1771cc6545b02ded
 Source:         https://files.pythonhosted.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 # it is arch specific since it depends on C FFI lib
 BuildSystem:    pyproject
