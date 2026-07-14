@@ -18,6 +18,9 @@ Source:         https://static.crates.io/crates/%{crate_name}/%{full_version}/do
 BuildArch:      noarch
 BuildSystem:    rustcrates
 
+# Otherwise won't build on rva23
+Patch2000:      2000-Add-riscv64a23-support.patch
+
 BuildRequires:  rust-rpm-macros
 
 Requires:       crate(cc-1) >= 1.2.26
