@@ -152,9 +152,6 @@ Requires:       llvm%{maj_ver}-libs%{?_isa} = %{version}-%{release}
 # libedit-devel is available.
 Requires:       pkgconfig(libedit)
 Requires:       pkgconfig(libzstd)
-# The installed cmake files reference binaries from llvm-test, llvm-static, and
-# llvm-gtest.
-Requires:       llvm%{maj_ver}-static%{?_isa} = %{version}-%{release}
 Provides:       llvm-devel(major) = %{maj_ver}
 
 %description -n llvm%{maj_ver}-devel
@@ -169,6 +166,7 @@ Shared libraries for the LLVM compiler infrastructure.
 
 %package     -n llvm%{maj_ver}-static
 Summary:        LLVM static libraries (%{maj_ver})
+Requires:       llvm%{maj_ver}-devel%{?_isa} = %{version}-%{release}
 Provides:       llvm-static(major) = %{maj_ver}
 
 %description -n llvm%{maj_ver}-static
