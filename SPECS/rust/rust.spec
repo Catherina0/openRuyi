@@ -30,13 +30,13 @@
 %global rust_env %{rust_env} RUST_BACKTRACE=1
 
 Name:           rust
-Version:        1.95.0
+Version:        1.97.1
 Release:        %autorelease
 Summary:        Rust systems programming language
 License:        MIT AND Apache-2.0
 URL:            http://www.rust-lang.org/
 VCS:            git:https://github.com/rust-lang/rust.git
-#!RemoteAsset:  sha256:62b67230754da642a264ca0cb9fc08820c54e2ed7b3baba0289876d4cdb48c08
+#!RemoteAsset:  sha256:0ed06fdaffd4722a7702e0b4eebfafc897ab8f513e8e1b247cdd7e5c6df6ded2
 Source0:        https://static.rust-lang.org/dist/rustc-%{version}-src.tar.xz
 Source1:        rust-openruyi.toml.in
 
@@ -64,9 +64,9 @@ BuildRequires:  pkgconfig(zlib)
 BuildRequires:  python3
 BuildRequires:  findutils
 %if %{with rust_bin}
-BuildRequires:  rust-bin >= 1.94.0
+BuildRequires:  rust-bin >= 1.96.0
 %else
-BuildRequires:  rust >= 1.94.0
+BuildRequires:  rust >= 1.96.0
 %endif
 # For tests.
 BuildRequires:  git-core
