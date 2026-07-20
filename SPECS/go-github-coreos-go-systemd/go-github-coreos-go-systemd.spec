@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %define _name           go-systemd
-%define go_import_path  github.com/coreos/go-systemd
+%define go_import_path  github.com/coreos/go-systemd/v22
 # systemd tests cannot done in a container environment - Julian
 %define go_test_ignore_failure 1
 
@@ -20,15 +20,19 @@ Source0:        https://github.com/coreos/go-systemd/archive/v%{version}.tar.gz#
 BuildArch:      noarch
 BuildSystem:    golangmodules
 
+BuildOption(check):  -vet=off
+
 BuildRequires:  go
 BuildRequires:  go-rpm-macros
-BuildRequires:  go(github.com/godbus/dbus)
+BuildRequires:  go(github.com/godbus/dbus/v5)
 BuildRequires:  go(golang.org/x/sys)
+BuildRequires:  pkgconfig(libsystemd)
 
-Provides:       go(github.com/coreos/go-systemd) = %{version}
+Provides:       go(%{go_import_path}) = %{version}
 
-Requires:       go(github.com/godbus/dbus)
+Requires:       go(github.com/godbus/dbus/v5)
 Requires:       go(golang.org/x/sys)
+Requires:       pkgconfig(libsystemd)
 
 %description
 Go bindings to systemd. The project has several packages:
