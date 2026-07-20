@@ -105,14 +105,16 @@ replace _mm_clflush with cbo.flush (Zicbom extension).
    i = next_packet_;
 --- a/runtime/hsa-runtime/core/util/utils.h
 +++ b/runtime/hsa-runtime/core/util/utils.h
-@@ -409,7 +409,11 @@
+@@ -409,7 +409,13 @@
    cur += offset;
    uintptr_t lastline = (uintptr_t)(cur + len - 1) | (cacheline_size - 1);
    do {
 +#if !defined(__riscv)
      _mm_clflush((const void*)cur);
-+#else
++#elif defined(__riscv_zicbom)
 +    asm volatile("cbo.flush (%0)" :: "r"((const void*)cur) : "memory");
++#else
++    asm volatile("fence rw,rw" ::: "memory");
 +#endif
      cur += cacheline_size;
    } while (cur <= (const char*)lastline);
