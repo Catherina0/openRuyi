@@ -202,6 +202,12 @@ rm -rv %{buildroot}%{_kf6_sharedir}/dbus-1/interfaces/
 
 # Use langpacks macro to auto-split translations
 %find_lang %{name} --with-qt --all-name --with-html --generate-subpackages
+# Manually put these non-locale format lang files into the subpackage meta.
+sed -i '/_langpack_template sr/a\
+%%lang(sr) /usr/share/locale/sr/LC_SCRIPTS/kfontinst/kfontinst.js\
+%%lang(sr@ijekavian) /usr/share/locale/sr@ijekavian/LC_SCRIPTS/kfontinst/kfontinst.js\
+%%lang(sr@ijekavianlatin) /usr/share/locale/sr@ijekavianlatin/LC_SCRIPTS/kfontinst/kfontinst.js\
+%%lang(sr@latin) /usr/share/locale/sr@latin/LC_SCRIPTS/kfontinst/kfontinst.js' ../SPECPARTS/find-lang-%{name}.lang.specpart
 
 %post
 %systemd_user_post plasma-kaccess.service
@@ -213,7 +219,7 @@ rm -rv %{buildroot}%{_kf6_sharedir}/dbus-1/interfaces/
 %systemd_user_postun plasma-kaccess.service
 
 %files -f %{name}.lang
-%doc %lang(en) %{_kf6_htmldir}/en/*/
+%docdir %{_kf6_htmldir}/en/*
 %license COPYING*
 %{_kf6_applicationsdir}/kaccess.desktop
 %{_kf6_applicationsdir}/kcm_access.desktop
@@ -320,7 +326,6 @@ rm -rv %{buildroot}%{_kf6_sharedir}/dbus-1/interfaces/
 %{_kf6_sharedir}/kcmsolidactions/
 %{_kf6_sharedir}/kconf_update/50-krunner-activate-typing.sh
 %{_kf6_sharedir}/kconf_update/50-krunner-activate-typing.upd
-%{_kf6_sharedir}/locale/sr/LC_SCRIPTS/kfontinst/kfontinst.js
 %{_kf6_sharedir}/kglobalaccel/org.kde.touchpadshortcuts.desktop
 %dir %{_kf6_sharedir}/sddm
 %dir %{_kf6_sharedir}/sddm/themes
@@ -330,8 +335,6 @@ rm -rv %{buildroot}%{_kf6_sharedir}/dbus-1/interfaces/
 %{_kf6_sharedir}/kcmmouse/
 %exclude %{_kf6_plasmadir}/emoji/
 %{_userunitdir}/plasma-kaccess.service
-# TODO: put these files to related lang subpackage.
-%{_kf6_sharedir}/locale/sr@*/LC_SCRIPTS/kfontinst/kfontinst.js
 
 %files emojier
 %{_kf6_applicationsdir}/org.kde.plasma.emojier.desktop
