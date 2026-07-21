@@ -330,6 +330,8 @@ rm -rv %{buildroot}%{_kf6_sharedir}/dbus-1/interfaces/
 %{_kf6_sharedir}/kcmmouse/
 %exclude %{_kf6_plasmadir}/emoji/
 %{_userunitdir}/plasma-kaccess.service
+# TODO: put these files to related lang subpackage.
+%{_kf6_sharedir}/locale/sr@*/LC_SCRIPTS/kfontinst/kfontinst.js
 
 %files emojier
 %{_kf6_applicationsdir}/org.kde.plasma.emojier.desktop
