@@ -23,7 +23,9 @@ BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(libelf)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  llvm-devel
+BuildRequires:  llvm-static
 BuildRequires:  clang-devel
+BuildRequires:  clang-static
 BuildRequires:  bcc-devel >= 0.19.0-1
 BuildRequires:  libbpf-devel
 BuildRequires:  libiberty-devel

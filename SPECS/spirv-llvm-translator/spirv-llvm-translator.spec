@@ -30,6 +30,7 @@ BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  ninja
 BuildRequires:  (cmake(LLVM) >= 22 with cmake(LLVM) < 23)
+BuildRequires:  (llvm-static >= 22 with llvm-static < 23)
 BuildRequires:  pkgconfig(SPIRV-Headers)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libxml-2.0)

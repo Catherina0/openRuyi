@@ -56,6 +56,7 @@ BuildRequires:  cmake
 BuildRequires:  cmake(amd_comgr)
 BuildRequires:  cmake(hsa-runtime64)
 BuildRequires:  llvm22-devel
+BuildRequires:  llvm22-static
 BuildRequires:  cmake(rocprofiler-register)
 BuildRequires:  hipcc
 BuildRequires:  lld(major) = %{llvm_maj_ver}

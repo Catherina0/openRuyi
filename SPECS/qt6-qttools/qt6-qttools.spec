@@ -46,6 +46,7 @@ BuildRequires:  qt6-qtdeclarative-static >= %{version}
 BuildRequires:  clang-devel
 BuildRequires:  clang-static
 BuildRequires:  llvm-devel
+BuildRequires:  llvm-static
 BuildRequires:  libzstd-devel
 
 %description
