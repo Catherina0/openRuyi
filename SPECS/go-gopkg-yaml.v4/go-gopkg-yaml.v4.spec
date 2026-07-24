@@ -6,19 +6,19 @@
 
 %define _name             yaml
 %define go_import_path    go.yaml.in/yaml/v4
-%define upstream_version  4.0.0-rc.4
+%define upstream_version  4.0.0-rc.6
 # The yts package requires external YAML Test Suite data files:
 # "Run 'make test-data' to download them first". Offline OBS builds cannot
 # download test data during %check, so keep the rest of the repository tested - HNO3Miracle
 %define go_test_exclude go.yaml.in/yaml/v4/yts
 
 Name:           go-gopkg-yaml.v4
-Version:        4.0.0~rc4
+Version:        4.0.0~rc6
 Release:        %autorelease
 Summary:        YAML support for the Go language
 License:        Apache-2.0
 URL:            https://github.com/yaml/go-yaml
-#!RemoteAsset:  sha256:f3ae68f40578781cd6fe0f86f6967dcc08bd012f57e8be1738f1f9e36f1dcfdb
+#!RemoteAsset:  sha256:7c580dfcca58ab33af4235913ff106b25de50dead4d73f0fd375b77db79ddb82
 Source0:        https://github.com/yaml/go-yaml/archive/v%{upstream_version}.tar.gz#/%{_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    golangmodules
