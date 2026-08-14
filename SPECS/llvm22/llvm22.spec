@@ -86,6 +86,9 @@ Source0:        https://github.com/llvm/llvm-project/releases/download/llvmorg-%
 Patch2000:         2000-Add-riscv64-openruyi-linux-triple-and-set-it-to-rva2.patch
 %endif
 Patch2001:         2001-Add-openruyi-linux-to-X86_64Triples-and-RISCV64Tripl.patch
+# Keep scalarized pointer-induction recipes after all phi-like recipes in the
+# VPlan header, fixing an LLVM LoopVectorize crash on RISC-V vector targets.
+Patch2002:         2002-fix-VPlan-phi-recipe-ordering.patch
 
 # clang patches
 
