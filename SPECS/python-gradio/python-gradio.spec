@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Li Guan <guanli.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname gradio
 
 Name:           python-%{srcname}
-Version:        6.14.0
+Version:        6.24.0
 Release:        %autorelease
 Summary:        Python library for easily interacting with trained machine learning models
 License:        Apache-2.0
 URL:            https://github.com/gradio-app/gradio
-#!RemoteAsset:  sha256:4972ef7d01ac57472772624eb4e095767b6c8f3cd4846b7fea648e8034cda9f8
+#!RemoteAsset:  sha256:2072be0c0803da1859f918a45dc568fafc7b0eebd581943bee8acc78f752e166
 Source0:        https://files.pythonhosted.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
