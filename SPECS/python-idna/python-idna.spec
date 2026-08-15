@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2025 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: Zheng Junjie <zhengjunjie@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname idna
 
 Name:           python-%{srcname}
-Version:        3.13
+Version:        3.18
 Release:        %autorelease
 Summary:        Internationalized domain names in applications
 License:        BSD-3-Clause
 URL:            https://github.com/kjd/idna
-#!RemoteAsset:  sha256:585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242
+#!RemoteAsset:  sha256:ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848
 Source0:        https://files.pythonhosted.org/packages/source/i/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
@@ -38,6 +39,7 @@ specification.
 %pyproject_buildrequires
 
 %files -f %{pyproject_files}
+%{_bindir}/idna
 %license LICENSE.md
 %doc README*
 
