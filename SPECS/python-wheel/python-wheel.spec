@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: Zheng Junjie <zhengjunjie@iscas.ac.cn>
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -13,24 +14,15 @@ Provides: bundled(python%{python3_pkgversion}dist(packaging)) = 24
 }
 
 Name:           python-wheel
-Version:        0.45.1
+Version:        0.48.0
 Release:        %autorelease
 Summary:        Built-package format for Python
 License:        MIT AND (Apache-2.0 OR BSD-2-Clause)
 URL:            https://github.com/pypa/wheel
-#!RemoteAsset:  sha256:398fe0a1a609b1084bcab897c65596613544fbe6109408e505e29e4ce0c3175d
+#!RemoteAsset:  sha256:c3beae7abe07db04c2303502e4483122cc6b3686a7dfb0d8ca050dd034d5bdfe
 Source:         %{url}/archive/%{version}/wheel-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
-
-# Compatibility with the setuptools 75+
-# https://github.com/pypa/wheel/issues/650
-# https://github.com/pypa/wheel/commit/3028d3.patch
-Patch0:         0001-3028d3.patch
-# Compatibility with the setuptools 78+ (PEP 639)
-# Upstream has removed this code entirely instead
-# https://github.com/pypa/wheel/pull/655
-Patch1:         0002-adjusts-tests-for-setuptools-78.patch
 
 BuildOption(install):  -l wheel
 # Although we have setuptools, maybe include in test is a bad idea
