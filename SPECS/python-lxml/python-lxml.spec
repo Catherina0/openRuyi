@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: Zheng Junjie <zhengjunjie@iscas.ac.cn>
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -12,14 +13,14 @@
 %bcond extras 0
 
 Name:           python-%{srcname}
-Version:        6.0.1
+Version:        6.1.1
 Release:        %autorelease
 Summary:        XML processing library combining libxml2/libxslt with the ElementTree API
 License:        BSD-3-Clause AND GPL-2.0-or-later
 URL:            https://github.com/lxml/lxml
 # TODO: Use %%{pypi_source %%{srcname} %%{version}} in the future - 251
 #       Otherwise https://files.pythonhosted.org/packages/source/a/abc/%%{srcname}-%%{version}.tar.gz
-#!RemoteAsset:  sha256:2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690
+#!RemoteAsset:  sha256:ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40
 Source0:        https://files.pythonhosted.org/packages/source/l/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildSystem:    pyproject
 
