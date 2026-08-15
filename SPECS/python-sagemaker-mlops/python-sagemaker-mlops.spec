@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Li Guan <guanli.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -8,13 +9,13 @@
 %global pypi_name sagemaker_mlops
 
 Name:           python-%{srcname}
-Version:        1.8.0
+Version:        1.20.0
 Release:        %autorelease
 Summary:        A library for MLOps on Amazon SageMaker
 License:        Apache-2.0
 URL:            https://sagemaker.readthedocs.io/en/stable/
 VCS:            git:https://github.com/aws/sagemaker-python-sdk.git
-#!RemoteAsset:  sha256:b4738d72b3c2e11a54ef9a751db6b5e33fa863556732cb3b8161698d4b4af2f1
+#!RemoteAsset:  sha256:0f1f230b186266b12f164b1590aa46500313158c3a0b381bf6317dc4c7564da1
 Source0:        https://files.pythonhosted.org/packages/source/s/%{srcname}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
