@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Xuhai Chang <xuhai.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname joserfc
 
 Name:           python-%{srcname}
-Version:        1.6.4
+Version:        1.7.4
 Release:        %autorelease
 Summary:        The ultimate Python library for JOSE RFCs (JWS, JWE, JWK, JWA, JWT)
 License:        BSD-3-Clause
 URL:            https://github.com/authlib/joserfc
-#!RemoteAsset:  sha256:34ce5f499bfcc5e9ad4cc75077f9278ab3227b71da9aaf28f9ab705f8a560d3c
+#!RemoteAsset:  sha256:b3bc561672ae541b17a9237053b48a03dacddd92d68047b3ecdfb4b5714a88ed
 Source0:        https://files.pythonhosted.org/packages/source/j/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
