@@ -1,18 +1,19 @@
 # SPDX-FileCopyrightText: (C) 2025 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2025 openRuyi Project Contributors
 # SPDX-FileContributor: misaka00251 <liuxin@iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname pyjwt
 
 Name:           python-%{srcname}
-Version:        2.12.1
+Version:        2.13.0
 Release:        %autorelease
 Summary:        Implementation of JSON Web Token validation for Python
 License:        MIT
 URL:            https://github.com/jpadilla/pyjwt
-#!RemoteAsset:  sha256:c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b
+#!RemoteAsset:  sha256:41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423
 Source0:        https://files.pythonhosted.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
