@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Li Guan <guanli.oerv@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
@@ -8,13 +9,13 @@
 %global pypi_name sagemaker_train
 
 Name:           python-%{srcname}
-Version:        1.8.0
+Version:        1.20.0
 Release:        %autorelease
 Summary:        Amazon SageMaker Python SDK for SageMaker Training
 License:        Apache-2.0
 URL:            https://sagemaker.readthedocs.io/en/stable/
 VCS:            git:https://github.com/aws/sagemaker-python-sdk.git
-#!RemoteAsset:  sha256:e241e99c6c3dec0d0464f33e6da87bc45db97867b7ed1f02ff2e264553fac54b
+#!RemoteAsset:  sha256:54d89b234864aaba28a517c2cbd6275ba84141fe57a33446d7c85f66614f9580
 Source0:        https://files.pythonhosted.org/packages/source/s/%{srcname}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
