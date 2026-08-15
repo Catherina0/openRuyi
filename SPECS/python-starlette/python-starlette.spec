@@ -1,19 +1,20 @@
 # SPDX-FileCopyrightText: (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
 # SPDX-FileCopyrightText: (C) 2026 openRuyi Project Contributors
 # SPDX-FileContributor: Kimmy <yucheng.or@isrc.iscas.ac.cn>
+# SPDX-FileContributor: Zitao Zhou <zitao.oerv@isrc.iscas.ac.cn>
 #
 # SPDX-License-Identifier: MulanPSL-2.0
 
 %global srcname starlette
 
 Name:           python-%{srcname}
-Version:        1.0.0
+Version:        1.6.0
 Release:        %autorelease
 Summary:        The little ASGI library that shines
 License:        BSD-3-Clause
 URL:            https://github.com/Kludex/starlette
 VCS:            git:https://github.com/Kludex/starlette.git
-#!RemoteAsset:  sha256:6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149
+#!RemoteAsset:  sha256:d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b
 Source:         https://files.pythonhosted.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildSystem:    pyproject
