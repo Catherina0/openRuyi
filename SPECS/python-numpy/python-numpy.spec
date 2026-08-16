@@ -17,7 +17,7 @@ Source:         https://files.pythonhosted.org/packages/source/n/%{srcname}/%{sr
 BuildSystem:    pyproject
 
 BuildOption(build):  -Csetup-args=-Dblas=openblas
-BuildOption(build):  -Csetup-args=-Dlapack=lapack
+BuildOption(build):  -Csetup-args=-Dlapack=openblas
 BuildOption(install):  -l %{srcname} -L
 
 BuildRequires:  pyproject-rpm-macros
