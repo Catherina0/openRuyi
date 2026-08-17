@@ -7,18 +7,18 @@
 %define qt6_version 6.8.0
 
 %define rname kservice
-# Full KF6 version (e.g. 6.27.0)
+# Full KF6 version (e.g. 6.28.0)
 %{!?_kf6_version: %global _kf6_version %{version}}
 
 Name:           kf6-kservice
-Version:        6.27.0
+Version:        6.28.0
 Release:        %autorelease
 Summary:        Plugin framework for desktop services
 License:        LGPL-2.1-or-later
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/frameworks/kservice
-#!RemoteAsset:  sha256:3736c6d6cd389efc89adbcb64fe7ba25ffc9d62eb8eaf6393f42bb85f655a8c7
-Source:         https://download.kde.org/stable/frameworks/6.27/%{rname}-%{version}.tar.xz
+#!RemoteAsset:  sha256:d9151195b748361a12d7aeafd8df531d2f45b55d202d7fa5f47c3a11d59877d6
+Source:         https://download.kde.org/stable/frameworks/6.28/%{rname}-%{version}.tar.xz
 BuildSystem:    cmake
 
 BuildOption(conf):  -DBUILD_TESTING=OFF
