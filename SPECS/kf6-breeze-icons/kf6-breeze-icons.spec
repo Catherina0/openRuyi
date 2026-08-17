@@ -7,20 +7,20 @@
 %define qt6_version 6.8.0
 
 %define rname breeze-icons
-# Full KF6 version (e.g. 6.27.0)
+# Full KF6 version (e.g. 6.28.0)
 %{!?_kf6_version: %global _kf6_version %{version}}
 
 %define _lto_cflags %{nil}
 
 Name:           kf6-breeze-icons
-Version:        6.27.0
+Version:        6.28.0
 Release:        %autorelease
 Summary:        Breeze icon theme
 License:        LGPL-3.0-only
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/frameworks/breeze-icons
-#!RemoteAsset:  sha256:bc8c2337802837ff1809269a8e4c4311b93e7e90c78ab4fe2a86cf5300ffd414
-Source:         https://download.kde.org/stable/frameworks/6.27/%{rname}-%{version}.tar.xz
+#!RemoteAsset:  sha256:45de8138ead0f3ff24de886fbe61d588ecd7f66dde6f8cf6f2906279254d094d
+Source:         https://download.kde.org/stable/frameworks/6.28/%{rname}-%{version}.tar.xz
 BuildSystem:    cmake
 
 BuildOption(conf):  -DBUILD_TESTING=OFF
