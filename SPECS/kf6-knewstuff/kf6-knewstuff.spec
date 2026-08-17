@@ -7,18 +7,18 @@
 %define qt6_version 6.8.0
 
 %define rname knewstuff
-# Full KF6 version (e.g. 6.27.0)
+# Full KF6 version (e.g. 6.28.0)
 %{!?_kf6_version: %global _kf6_version %{version}}
 
 Name:           kf6-knewstuff
-Version:        6.27.0
+Version:        6.28.0
 Release:        %autorelease
 Summary:        Framework for downloading and sharing additional application data
 License:        LGPL-2.1-or-later
 URL:            https://www.kde.org
 VCS:            git:https://github.com/KDE/knewstuff.git
-#!RemoteAsset:  sha256:8c19df7ba5940c36ff15051703acd3a16c664b4a570817b6770fafc7ab59d6de
-Source:         https://download.kde.org/stable/frameworks/6.27/%{rname}-%{version}.tar.xz
+#!RemoteAsset:  sha256:dc479d74def4e2d3e96f320f19285dcf88ec3ec6d39229f14ecb362983e305bd
+Source:         https://download.kde.org/stable/frameworks/6.28/%{rname}-%{version}.tar.xz
 BuildSystem:    cmake
 
 BuildOption(conf):  -DBUILD_TESTING=OFF
