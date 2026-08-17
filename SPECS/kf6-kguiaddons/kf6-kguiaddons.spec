@@ -8,19 +8,19 @@
 
 %define rname kguiaddons
 
-# Full KF6 version (e.g. 6.27.0)
+# Full KF6 version (e.g. 6.28.0)
 # %%{!?_kf6_version: %%global _kf6_version %%{version}}
-%global _kf6_version 6.27.0
+%global _kf6_version 6.28.0
 
 Name:           kf6-kguiaddons
-Version:        6.27.0
+Version:        6.28.0
 Release:        %autorelease
 Summary:        Utilities for graphical user interfaces
 License:        LGPL-2.1-or-later
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/frameworks/kguiaddons
-#!RemoteAsset:  sha256:29b043480c45d3e51c57cac74fd83589cc7729c907a6585b72880cbf07feaf82
-Source:         https://download.kde.org/stable/frameworks/6.27/%{rname}-%{version}.tar.xz
+#!RemoteAsset:  sha256:f46aeca80707e774fcffe8aa82e464a81056ce84f613347a5c9cc24c1c9a8432
+Source:         https://download.kde.org/stable/frameworks/6.28/%{rname}-%{version}.tar.xz
 BuildSystem:    cmake
 
 BuildOption(conf):  -DBUILD_TESTING=OFF
