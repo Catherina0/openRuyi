@@ -7,18 +7,18 @@
 %define qt6_version 6.8.0
 
 %define rname kquickcharts
-# Full KF6 version (e.g. 6.27.0)
+# Full KF6 version (e.g. 6.28.0)
 %{!?_kf6_version: %global _kf6_version %{version}}
 
 Name:           kf6-kquickcharts
-Version:        6.27.0
+Version:        6.28.0
 Release:        %autorelease
 Summary:        Set of charts for QtQuick applications
 License:        LGPL-2.1-or-later
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/frameworks/kquickcharts.git
-#!RemoteAsset:  sha256:d2a533bbf3d7f257e9306009bc32bdea41346cbd8e82d06c188879d5f0460380
-Source:         https://download.kde.org/stable/frameworks/6.27/%{rname}-%{version}.tar.xz
+#!RemoteAsset:  sha256:c5d361d90861b4cd3db861568da5279ae2b1cb953e874126c15abbd7138378e5
+Source:         https://download.kde.org/stable/frameworks/6.28/%{rname}-%{version}.tar.xz
 BuildSystem:    cmake
 
 BuildOption(conf):  -DBUILD_TESTING=OFF
