@@ -81,14 +81,17 @@ VCS:            git:https://github.com/llvm/llvm-project.git
 #!RemoteAsset:  sha256:922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888
 Source0:        https://github.com/llvm/llvm-project/releases/download/llvmorg-%{maj_ver}.%{min_ver}.%{patch_ver}%{?rc_ver:-%{rc_ver}}/%{src_tarball_dir}.tar.xz
 
+# https://github.com/llvm/llvm-project/issues/198699
+# We also need to port this patch to llvm 23
+Patch0:         0001-Dynamically-find-unused-register-for-stack-protection-code.patch
 # please keep the patches in different groups for easier maintenance
 %if "%{openruyi_riscv_arch}" == "-march=rva23u64"
-Patch2000:         2000-Add-riscv64-openruyi-linux-triple-and-set-it-to-rva2.patch
+Patch2000:      2000-Add-riscv64-openruyi-linux-triple-and-set-it-to-rva2.patch
 %endif
-Patch2001:         2001-Add-openruyi-linux-to-X86_64Triples-and-RISCV64Tripl.patch
+Patch2001:      2001-Add-openruyi-linux-to-X86_64Triples-and-RISCV64Tripl.patch
 # Keep scalarized pointer-induction recipes after all phi-like recipes in the
 # VPlan header, fixing an LLVM LoopVectorize crash on RISC-V vector targets.
-Patch2002:         2002-fix-VPlan-phi-recipe-ordering.patch
+Patch2002:      2002-fix-VPlan-phi-recipe-ordering.patch
 
 # clang patches
 
