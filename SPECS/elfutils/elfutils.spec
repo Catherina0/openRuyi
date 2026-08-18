@@ -7,18 +7,15 @@
 # SPDX-License-Identifier: MulanPSL-2.0
 
 Name:           elfutils
-Version:        0.194
+Version:        0.196
 Release:        %autorelease
 Summary:        Higher-level library to access ELF files
 License:        GPL-3.0-or-later
 URL:            https://sourceware.org/elfutils/
 VCS:            git:https://sourceware.org/git/elfutils.git
-#!RemoteAsset:  sha256:09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
+#!RemoteAsset:  sha256:fd5cc6b77ad6773cac93cb3f415f9318ac3b3455eecf801f6b4a742c4f6c7209
 Source0:        https://sourceware.org/elfutils/ftp/%{version}/%{name}-%{version}.tar.bz2
 BuildSystem:    autotools
-
-# from https://sourceware.org/git/?p=elfutils.git;a=commit;h=4a5cf8be906d5991e7527e69e3f2ceaa74811301
-Patch0:         elfutils-0.194-fix-const.patch
 
 BuildOption(conf):  --program-prefix=eu-
 BuildOption(conf):  --disable-debuginfod
@@ -141,6 +138,9 @@ ls -lR %{buildroot}/%{_libdir}/libelf*
 %{_bindir}/eu-strip
 %{_bindir}/eu-unstrip
 %{_bindir}/eu-srcfiles
+%ifarch x86_64
+%{_bindir}/eu-stackprof
+%endif
 # libasm
 %{_libdir}/libasm.so.*
 %{_libdir}/libasm-%{version}.so
@@ -184,7 +184,7 @@ ls -lR %{buildroot}/%{_libdir}/libelf*
 %{_mandir}/man3/elf_*.3*
 %{_mandir}/man3/elf32_*.3*
 %{_mandir}/man3/elf64_*.3*
-%{_mandir}/man3/gelf_*.3*
+%{_mandir}/man3/gelf*.3*
 %{_mandir}/man3/libelf.3.gz
 
 %files -n libdebuginfod-dummy
