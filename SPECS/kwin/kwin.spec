@@ -16,13 +16,13 @@
 %{!?_plasma6_version: %define _plasma6_version %(echo %{_plasma6_bugfix} | awk -F. '{print $1"."$2}')}
 
 Name:           kwin
-Version:        6.7.1
+Version:        6.7.4
 Release:        %autorelease
 Summary:        KDE Window Manager
 License:        GPL-2.0-or-later AND GPL-3.0-or-later
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/plasma/kwin.git
-#!RemoteAsset:  sha256:caa7c25bf0c9c0d9c4ebeb9b67780a18f2dd7053fa702de512b655fa9deea219
+#!RemoteAsset:  sha256:94cbbd1c2fa26d8acabcf735b77f140edb0d4c99a93d1fdf2fadab40e4e23054
 Source:         https://invent.kde.org/plasma/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildSystem:    cmake
 
