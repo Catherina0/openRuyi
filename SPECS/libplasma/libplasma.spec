@@ -13,13 +13,13 @@
 %{!?_plasma6_version: %define _plasma6_version %(echo %{_plasma6_bugfix} | awk -F. '{print $1"."$2}')}
 
 Name:           libplasma
-Version:        6.7.1
+Version:        6.7.4
 Release:        %autorelease
 Summary:        Plasma library and runtime components based upon KF6 and Qt6
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/plasma/libplasma
-#!RemoteAsset:  sha256:93857a6c2f7dc3c1b1c8685c4892813285e6b3812ee53b9404e2e7c23c78fe1f
+#!RemoteAsset:  sha256:9611fcea937cd6006661393cb20ee7d1f4eeec83ce93650151ae6df2ba7b7b49
 Source:         https://invent.kde.org/plasma/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildSystem:    cmake
 
