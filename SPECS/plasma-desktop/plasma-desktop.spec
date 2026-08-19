@@ -19,13 +19,13 @@
 %{!?_plasma6_version: %define _plasma6_version %(echo %{_plasma6_bugfix} | awk -F. '{print $1"."$2}')}
 
 Name:           plasma-desktop
-Version:        6.7.1
+Version:        6.7.4
 Release:        %autorelease
 Summary:        The KDE Plasma Workspace Components
 License:        GPL-2.0-only
 URL:            https://www.kde.org
 VCS:            git:https://invent.kde.org/plasma/plasma-desktop.git
-#!RemoteAsset:  sha256:ec264cbc67c7e16d646684082f971816c0d475d0be3b92443c4e4802c89f8eee
+#!RemoteAsset:  sha256:e48942d66b97be2a737d0d05cb0781caa25d304837ed72cc747f2c593c6cba2e
 Source:         https://invent.kde.org/plasma/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildSystem:    cmake
 
