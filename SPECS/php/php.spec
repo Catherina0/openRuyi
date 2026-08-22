@@ -13,15 +13,18 @@
 %global _test_target test
 
 Name:           php
-Version:        8.5.7
+Version:        8.5.9
 Release:        %autorelease
 Summary:        The PHP Interpreter
 License:        PHP-3.01
 URL:            https://www.php.net
 VCS:            git:https://github.com/php/php-src
-#!RemoteAsset:  sha256:e5eba93fd6dd3241d0e61e932eb99a3783b40568553fb0e511b660ecd863a049
+#!RemoteAsset:  sha256:d735459c2cbaeb0673d416c33d372d9ff261d562f6b29da48f3e6aeaeca083af
 Source0:        https://www.php.net/distributions/%{name}-%{version}.tar.gz
 BuildSystem:    autotools
+
+Patch0:         0001-Regenerate-the-expired-ext-ftp-tests-cert.pem.patch
+Patch1:         0002-tests-GHSA-x692-q9x7-8c3f.phpt-Add-extensions-required.patch
 
 BuildOption(conf):  --enable-re2c-cgoto
 BuildOption(conf):  --with-config-file-path=%{_sysconfdir}/php
