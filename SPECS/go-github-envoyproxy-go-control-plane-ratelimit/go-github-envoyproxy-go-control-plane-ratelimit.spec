@@ -23,7 +23,7 @@ BuildRequires:  go
 BuildRequires:  go(github.com/cncf/xds/go)
 BuildRequires:  go(github.com/envoyproxy/go-control-plane/envoy)
 BuildRequires:  go(github.com/envoyproxy/protoc-gen-validate)
-BuildRequires:  go(github.com/planetscale/vtprotobuf)
+BuildRequires:  go(github.com/planetscale/vtprotobuf) >= 0.6
 BuildRequires:  go(golang.org/x/net)
 BuildRequires:  go(golang.org/x/sys)
 BuildRequires:  go(golang.org/x/text)
@@ -37,7 +37,7 @@ Provides:       go(github.com/envoyproxy/go-control-plane/ratelimit) = %{version
 Requires:       go(github.com/cncf/xds/go)
 Requires:       go(github.com/envoyproxy/go-control-plane/envoy)
 Requires:       go(github.com/envoyproxy/protoc-gen-validate)
-Requires:       go(github.com/planetscale/vtprotobuf)
+Requires:       go(github.com/planetscale/vtprotobuf) >= 0.6
 Requires:       go(golang.org/x/net)
 Requires:       go(golang.org/x/sys)
 Requires:       go(golang.org/x/text)
